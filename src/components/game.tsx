@@ -34,6 +34,11 @@ export default function Game() {
   const [sounds, setSounds] = useState<any>(null);
   const [isMuted, setIsMuted] = useState(true);
   const [animation, setAnimation] = useState<AnimationState>({});
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     const soundPack = {
@@ -232,7 +237,7 @@ export default function Game() {
           onPour={handlePour}
           onReset={handleReset}
         />
-        {MemoizedHintButton}
+        {isClient && MemoizedHintButton}
       </div>
 
       <WinDialog
