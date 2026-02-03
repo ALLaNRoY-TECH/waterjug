@@ -50,8 +50,7 @@ After the hint, evaluate if it is helpful given the current game state and the n
 Example hint:
 \"Try filling Jug A completely from the tap.\"
 
-Output in JSON format:
-{{$jsonOutput: GenerateHintOutput}}`,
+Output in JSON format.`,
 });
 
 const generateHintFlow = ai.defineFlow(
